@@ -41,7 +41,7 @@ namespace MahApps.Metro.Controls
                                                                 //auto set IsActive to false if we're hiding it.
                                                                 if ((Visibility)e.NewValue != Visibility.Visible) {
                                                                     //sets the value without overriding it's binding (if any).
-                                                                    ring.SetCurrentValue(ProgressRing.IsActiveProperty, false);
+                                                                    ring.SetValue(ProgressRing.IsActiveProperty, false);
                                                                 } else {
                                                                     // #1105 don't forget to re-activate
                                                                     ring.IsActive = true;

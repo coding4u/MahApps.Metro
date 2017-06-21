@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Windows.Controls;
+using System;
 using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;

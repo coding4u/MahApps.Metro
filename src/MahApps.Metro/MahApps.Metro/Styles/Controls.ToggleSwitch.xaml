@@ -51,7 +51,7 @@
                     <Grid>
                         <Grid x:Name="PART_SwitchTrack"
                               SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
-                              UseLayoutRounding="False">
+                              >
                             <Rectangle x:Name="PART_SwitchBrushOuterBorder"
                                        Width="{TemplateBinding Width}"
                                        Height="{TemplateBinding Height}"

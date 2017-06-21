@@ -2,16 +2,6 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:po="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options">
 
-    <ExponentialEase x:Key="ExpoEaseIn"
-                     EasingMode="EaseIn"
-                     Exponent="2" />
-    <ExponentialEase x:Key="ExpoEaseOut"
-                     EasingMode="EaseOut"
-                     Exponent="2" />
-    <ExponentialEase x:Key="ExpoEaseInOut"
-                     EasingMode="EaseInOut"
-                     Exponent="2" />
-
     <DropShadowEffect x:Key="WaitingForDataEffect"
                       BlurRadius="10"
                       Opacity="0"
@@ -30,38 +20,9 @@
     </Storyboard>
 
     <Storyboard x:Key="HideFloatingMessageStoryboard">
-        <DoubleAnimation EasingFunction="{StaticResource ExpoEaseInOut}"
-                         Storyboard.TargetName="PART_FloatingMessageContainer"
-                         Storyboard.TargetProperty="MaxHeight"
-                         From="15"
-                         To="0"
-                         Duration="0:0:.2" />
-        <DoubleAnimation Storyboard.TargetName="PART_FloatingMessageContainer"
-                         Storyboard.TargetProperty="Opacity"
-                         To="0"
-                         Duration="0:0:.2" />
-        <DoubleAnimation EasingFunction="{StaticResource ExpoEaseIn}"
-                         Storyboard.TargetName="PART_FloatingMessage"
-                         Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.Y)"
-                         To="20"
-                         Duration="0:0:.2" />
     </Storyboard>
 
     <Storyboard x:Key="ShowFloatingMessageStoryboard">
-        <DoubleAnimation EasingFunction="{StaticResource ExpoEaseInOut}"
-                         Storyboard.TargetName="PART_FloatingMessageContainer"
-                         Storyboard.TargetProperty="MaxHeight"
-                         From="0"
-                         To="15"
-                         Duration="0:0:.2" />
-        <DoubleAnimation Storyboard.TargetName="PART_FloatingMessageContainer"
-                         Storyboard.TargetProperty="Opacity"
-                         Duration="0:0:.2" />
-        <DoubleAnimation EasingFunction="{StaticResource ExpoEaseOut}"
-                         Storyboard.TargetName="PART_FloatingMessage"
-                         Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.Y)"
-                         To="0"
-                         Duration="0:0:.2" />
     </Storyboard>
 
 </ResourceDictionary>

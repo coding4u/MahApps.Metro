@@ -6,6 +6,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Threading;
+using System.Tuples;
 
 namespace MahApps.Metro.Controls
 {    
@@ -305,10 +306,10 @@ namespace MahApps.Metro.Controls
             {
                 var windowTheme = DetectTheme(this);
 
-                if (windowTheme?.Item2 != null)
+                if (windowTheme?.Element2 != null)
                 {
-                    var accent = windowTheme.Item2;
-                    this.ChangeFlyoutTheme(accent, windowTheme.Item1);
+                    var accent = windowTheme.Element2;
+                    this.ChangeFlyoutTheme(accent, windowTheme.Element1);
                 }
 
                 // we must certain to get the right foreground for window commands and buttons
@@ -404,7 +405,7 @@ namespace MahApps.Metro.Controls
             // first look for owner
             var window = flyout.ParentWindow;
             var theme = window != null ? ThemeManager.DetectAppStyle(window) : null;
-            if (theme?.Item2 != null)
+            if (theme?.Element2 != null)
             {
                 return theme;
             }
@@ -414,14 +415,14 @@ namespace MahApps.Metro.Controls
             {
                 var mainWindow = Application.Current.MainWindow as MetroWindow;
                 theme = mainWindow != null ? ThemeManager.DetectAppStyle(mainWindow) : null;
-                if (theme?.Item2 != null)
+                if (theme?.Element2 != null)
                 {
                     return theme;
                 }
 
                 // oh no, now look at application resource
                 theme = ThemeManager.DetectAppStyle(Application.Current);
-                if (theme?.Item2 != null)
+                if (theme?.Element2 != null)
                 {
                     return theme;
                 }

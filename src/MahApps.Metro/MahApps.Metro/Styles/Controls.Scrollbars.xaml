@@ -6,13 +6,11 @@
 
     <Storyboard x:Key="MetroScrollBarThumbMouseOverStoryboard" po:Freeze="True">
         <DoubleAnimationUsingKeyFrames Storyboard.TargetName="MouseOverRectangle" Storyboard.TargetProperty="(UIElement.Opacity)">
-            <EasingDoubleKeyFrame KeyTime="0:0:0.15" Value="0.6" />
         </DoubleAnimationUsingKeyFrames>
     </Storyboard>
 
     <Storyboard x:Key="MetroScrollBarThumbPressedStoryboard" po:Freeze="True">
         <DoubleAnimationUsingKeyFrames Storyboard.TargetName="PressedRectangle" Storyboard.TargetProperty="(UIElement.Opacity)">
-            <EasingDoubleKeyFrame KeyTime="0:0:0.15" Value="0.8" />
         </DoubleAnimationUsingKeyFrames>
     </Storyboard>
 
@@ -35,7 +33,7 @@
                                  Margin="{TemplateBinding Margin}"
                                  SnapsToDevicePixels="True"
                                  Stretch="Uniform"
-                                 UseLayoutRounding="True">
+                                 >
                             <Path x:Name="Arrow"
                                   Width="256"
                                   Height="256"

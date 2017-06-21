@@ -122,7 +122,7 @@
                             SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
                         <Grid HorizontalAlignment="Stretch"
                               VerticalAlignment="Stretch"
-                              UseLayoutRounding="True">
+                              >
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition x:Name="PART_ContentLeftCol" Width="Auto" />
                                 <ColumnDefinition x:Name="PART_ContentRightCol" Width="Auto" />
@@ -148,7 +148,7 @@
                                                        Foreground="{TemplateBinding Foreground}"
                                                        RecognizesAccessKey="True"
                                                        SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
-                                                       UseLayoutRounding="False" />
+                                                       />
                             <Controls:Underline x:Name="Underline"
                                                 Grid.Row="1"
                                                 Grid.Column="0"

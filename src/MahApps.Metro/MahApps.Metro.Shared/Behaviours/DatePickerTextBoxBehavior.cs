@@ -1,10 +1,10 @@
 ﻿namespace MahApps.Metro.Behaviours
 {
     using System.Windows.Controls;
-    using System.Windows.Controls.Primitives;
     using System.Windows.Interactivity;
     using System.Windows.Threading;
     using MahApps.Metro.Controls;
+    using Microsoft.Windows.Controls.Primitives;
 
     public class DatePickerTextBoxBehavior : Behavior<DatePickerTextBox>
     {

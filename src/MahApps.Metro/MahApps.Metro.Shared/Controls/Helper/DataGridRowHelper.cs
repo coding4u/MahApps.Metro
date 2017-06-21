@@ -1,9 +1,9 @@
 ﻿using System.Windows;
-using System.Windows.Controls;
 
 namespace MahApps.Metro.Controls
 {
     using System.ComponentModel;
+    using Microsoft.Windows.Controls;
 
     public static class DataGridRowHelper
     {

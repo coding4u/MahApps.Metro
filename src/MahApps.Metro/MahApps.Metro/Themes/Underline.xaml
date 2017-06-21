@@ -19,19 +19,18 @@
                             Background="{TemplateBinding Background}"
                             BorderBrush="{TemplateBinding BorderBrush}"
                             SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
-                            UseLayoutRounding="{TemplateBinding UseLayoutRounding}">
+                            >
                         <controls:ClipBorder Background="{TemplateBinding Background}"
                                              BorderThickness="0"
                                              SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
                             <ContentPresenter Margin="{TemplateBinding Padding}"
                                               SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
-                                              UseLayoutRounding="False" />
+                                              />
                         </controls:ClipBorder>
                     </Border>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
-        <Setter Property="UseLayoutRounding" Value="True" />
         <Setter Property="VerticalAlignment" Value="Stretch" />
     </Style>
 

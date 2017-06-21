@@ -99,13 +99,6 @@
                             <Controls:ScrollViewerOffsetMediator.Resources>
                                 <Storyboard x:Key="Storyboard1">
                                     <DoubleAnimationUsingKeyFrames Storyboard.TargetName="PART_Mediator" Storyboard.TargetProperty="HorizontalOffset">
-                                        <EasingDoubleKeyFrame x:Name="edkf"
-                                                              KeyTime="0:0:0.6"
-                                                              Value="0">
-                                            <EasingDoubleKeyFrame.EasingFunction>
-                                                <CircleEase />
-                                            </EasingDoubleKeyFrame.EasingFunction>
-                                        </EasingDoubleKeyFrame>
                                     </DoubleAnimationUsingKeyFrames>
                                 </Storyboard>
 

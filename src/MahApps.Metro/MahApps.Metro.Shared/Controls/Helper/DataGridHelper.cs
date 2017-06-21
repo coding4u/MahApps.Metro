@@ -9,6 +9,8 @@ using System.Windows.Media.Media3D;
 
 namespace MahApps.Metro.Controls
 {
+    using Microsoft.Windows.Controls;
+
     public static class DataGridHelper
     {
         private static DataGrid _suppressComboAutoDropDown;
@@ -74,7 +76,7 @@ namespace MahApps.Metro.Controls
                     {
                         dataGrid.CurrentCell = new DataGridCellInfo(dataGridCell);
                         dataGrid.BeginEdit();
-                        toggleButton.SetCurrentValue(ToggleButton.IsCheckedProperty, !toggleButton.IsChecked);
+                        toggleButton.SetValue(ToggleButton.IsCheckedProperty, !toggleButton.IsChecked);
                         dataGrid.CommitEdit();
                         e.Handled = true;
                     }

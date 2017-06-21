@@ -77,7 +77,7 @@ namespace MahApps.Metro.Controls
             var selectedItem = this._buttonsListView?.SelectedItem ?? this._optionsListView?.SelectedItem;
             if (selectedItem != null)
             {
-                this.SetCurrentValue(ContentProperty, selectedItem);
+                this.SetValue(ContentProperty, selectedItem);
             }
         }
     }

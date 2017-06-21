@@ -12,6 +12,8 @@ namespace MahApps.Metro.Controls
     using System.Windows.Data;
     using System.Windows.Input;
     using System.Windows.Markup;
+    using Microsoft.Windows.Controls;
+    using Microsoft.Windows.Controls.Primitives;
 
     /// <summary>
     ///     Represents a base-class for time picking.
@@ -445,7 +447,7 @@ namespace MahApps.Metro.Controls
         protected virtual void OnTextBoxLostFocus(object sender, RoutedEventArgs e)
         {
             TimeSpan ts;
-            if (TimeSpan.TryParse(((DatePickerTextBox)sender).Text, SpecificCultureInfo, out ts))
+            if (TimeSpan.TryParse(((DatePickerTextBox)sender).Text, out ts))
             {
                 SelectedTime = ts;
             }

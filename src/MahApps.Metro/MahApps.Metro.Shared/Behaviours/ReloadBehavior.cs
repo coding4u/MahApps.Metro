@@ -91,7 +91,7 @@ namespace MahApps.Metro.Behaviours
                 metroContentControl.Reload();
             }
             
-            var transitioningContentControl = contentControl as TransitioningContentControl;
+            var transitioningContentControl = contentControl as Controls.TransitioningContentControl;
             if (transitioningContentControl != null)
             {
                 transitioningContentControl.ReloadTransition();

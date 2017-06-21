@@ -126,7 +126,6 @@
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
         <Setter Property="Padding" Value="0" />
         <Setter Property="Template" Value="{StaticResource TopGlowTemplate}" />
-        <Setter Property="UseLayoutRounding" Value="True" />
         <Setter Property="VerticalAlignment" Value="Stretch" />
         <Setter Property="VerticalContentAlignment" Value="Stretch" />
         <Style.Triggers>

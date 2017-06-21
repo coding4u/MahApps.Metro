@@ -184,9 +184,9 @@ namespace MahApps.Metro.Controls
 
         private void UseDropShadow()
         {
-            this.SetCurrentValue(BorderThicknessProperty, new Thickness(0));
-            this.SetCurrentValue(BorderBrushProperty, null);
-            this.SetCurrentValue(GlowBrushProperty, Brushes.Black);
+            this.SetValue(BorderThicknessProperty, new Thickness(0));
+            this.SetValue(BorderBrushProperty, null);
+            this.SetValue(GlowBrushProperty, Brushes.Black);
         }
 
         public bool IsWindowDraggable
@@ -463,11 +463,11 @@ namespace MahApps.Metro.Controls
             // UseNoneWindowStyle means no title bar, window commands or min, max, close buttons
             if (useNoneWindowStyle)
             {
-                this.SetCurrentValue(ShowTitleBarProperty, false);
+                this.SetValue(ShowTitleBarProperty, false);
             }
             else
             {
-                this.SetCurrentValue(ShowTitleBarProperty, isTitleBarVisible);
+                this.SetValue(ShowTitleBarProperty, isTitleBarVisible);
             }
             if (LeftWindowCommandsPresenter != null)
             {
@@ -810,11 +810,11 @@ namespace MahApps.Metro.Controls
         public void ShowOverlay()
         {
             overlayBox.Visibility = Visibility.Visible;
-            overlayBox.SetCurrentValue(Grid.OpacityProperty, this.OverlayOpacity);
+            overlayBox.SetValue(Grid.OpacityProperty, this.OverlayOpacity);
         }
         public void HideOverlay()
         {
-            overlayBox.SetCurrentValue(Grid.OpacityProperty, 0.0);
+            overlayBox.SetValue(Grid.OpacityProperty, 0.0);
             overlayBox.Visibility = System.Windows.Visibility.Hidden;
         }
 

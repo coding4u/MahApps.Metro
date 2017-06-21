@@ -3,7 +3,8 @@
                     xmlns:System="clr-namespace:System;assembly=mscorlib"
                     xmlns:actions="clr-namespace:MahApps.Metro.Actions"
                     xmlns:controls="clr-namespace:MahApps.Metro.Controls"
-                    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity">
+                    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+                    xmlns:interactivity="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity">
 
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.TabControl.xaml" />
@@ -187,11 +188,11 @@
                                     VerticalAlignment="Center"
                                     IsTabStop="False"
                                     Style="{DynamicResource StandardTabItemCloseButtonStyle}">
-                                <i:Interaction.Triggers>
-                                    <i:EventTrigger EventName="Click">
+                                <interactivity:Interaction.Triggers>
+                                    <interactivity:EventTrigger EventName="Click">
                                         <actions:CloseTabItemAction TabControl="{Binding RelativeSource={RelativeSource AncestorType=TabControl}}" TabItem="{Binding RelativeSource={RelativeSource AncestorType=TabItem}}" />
-                                    </i:EventTrigger>
-                                </i:Interaction.Triggers>
+                                    </interactivity:EventTrigger>
+                                </interactivity:Interaction.Triggers>
                             </Button>
                         </StackPanel>
                     </Border>

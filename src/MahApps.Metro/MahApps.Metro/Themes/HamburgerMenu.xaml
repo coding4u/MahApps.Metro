@@ -92,10 +92,6 @@
         </Setter>
     </Style>
 
-    <QuinticEase x:Key="ScrollBarEaseInOut"
-                 pOptions:Freeze="true"
-                 EasingMode="EaseInOut" />
-
     <Style x:Key="HamburgerScrollViewerStyle"
            BasedOn="{StaticResource MetroScrollViewer}"
            TargetType="{x:Type ScrollViewer}">
@@ -164,34 +160,12 @@
                             <TriggerBase.EnterActions>
                                 <BeginStoryboard>
                                     <Storyboard>
-                                        <DoubleAnimation EasingFunction="{StaticResource ScrollBarEaseInOut}"
-                                                         Storyboard.TargetName="PART_VerticalScrollBar"
-                                                         Storyboard.TargetProperty="Opacity"
-                                                         To="1"
-                                                         Duration="0:0:0.2" />
-                                        <DoubleAnimation EasingFunction="{StaticResource ScrollBarEaseInOut}"
-                                                         Storyboard.TargetName="PART_HorizontalScrollBar"
-                                                         Storyboard.TargetProperty="Opacity"
-                                                         To="1"
-                                                         Duration="0:0:0.2" />
                                     </Storyboard>
                                 </BeginStoryboard>
                             </TriggerBase.EnterActions>
                             <TriggerBase.ExitActions>
                                 <BeginStoryboard>
                                     <Storyboard>
-                                        <DoubleAnimation BeginTime="0:0:2"
-                                                         EasingFunction="{StaticResource ScrollBarEaseInOut}"
-                                                         Storyboard.TargetName="PART_VerticalScrollBar"
-                                                         Storyboard.TargetProperty="Opacity"
-                                                         To="0"
-                                                         Duration="0:0:1" />
-                                        <DoubleAnimation BeginTime="0:0:2"
-                                                         EasingFunction="{StaticResource ScrollBarEaseInOut}"
-                                                         Storyboard.TargetName="PART_HorizontalScrollBar"
-                                                         Storyboard.TargetProperty="Opacity"
-                                                         To="0"
-                                                         Duration="0:0:1" />
                                     </Storyboard>
                                 </BeginStoryboard>
                             </TriggerBase.ExitActions>

@@ -15,6 +15,7 @@ namespace Standard
     using System.Runtime.InteropServices;
     using System.Security.Cryptography;
     using System.Text;
+    using MahApps.Metro;
 
     internal enum SafeCopyFileOptions
     {
@@ -130,7 +131,7 @@ namespace Standard
         [SuppressMessage("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
         public static System.Windows.Point GetPoint(IntPtr ptr)
         {
-            var xy = unchecked(Environment.Is64BitProcess ? (uint)ptr.ToInt64() : (uint)ptr.ToInt32());
+            var xy = unchecked(EnvironmentUtils.Is64BitProcess ? (uint)ptr.ToInt64() : (uint)ptr.ToInt32());
             var x = unchecked((short)xy);
             var y = unchecked((short)(xy >> 16));
             return new System.Windows.Point(x, y);

@@ -274,7 +274,7 @@ namespace MahApps.Metro.Controls
         {
             if (e.Key == System.Windows.Input.Key.Space && e.OriginalSource == sender)
             {
-                this.SetCurrentValue(ToggleSwitch.IsCheckedProperty, !IsChecked);
+                this.SetValue(ToggleSwitch.IsCheckedProperty, !IsChecked);
             }
         }
 

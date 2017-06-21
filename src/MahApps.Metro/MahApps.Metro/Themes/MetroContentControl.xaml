@@ -39,11 +39,6 @@
                                                                        Storyboard.TargetName="root"
                                                                        Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.X)">
                                             <SplineDoubleKeyFrame KeyTime="00:00:00" Value="30" />
-                                            <EasingDoubleKeyFrame KeyTime="00:00:00.700" Value="0">
-                                                <EasingDoubleKeyFrame.EasingFunction>
-                                                    <CubicEase EasingMode="EaseOut" />
-                                                </EasingDoubleKeyFrame.EasingFunction>
-                                            </EasingDoubleKeyFrame>
                                         </DoubleAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
@@ -59,11 +54,6 @@
                                                                        Storyboard.TargetName="root"
                                                                        Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.X)">
                                             <SplineDoubleKeyFrame KeyTime="00:00:00" Value="-30" />
-                                            <EasingDoubleKeyFrame KeyTime="00:00:00.700" Value="0">
-                                                <EasingDoubleKeyFrame.EasingFunction>
-                                                    <CubicEase EasingMode="EaseOut" />
-                                                </EasingDoubleKeyFrame.EasingFunction>
-                                            </EasingDoubleKeyFrame>
                                         </DoubleAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>

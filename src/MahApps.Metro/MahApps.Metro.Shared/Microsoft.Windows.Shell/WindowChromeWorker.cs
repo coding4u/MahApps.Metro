@@ -15,6 +15,7 @@ namespace Microsoft.Windows.Shell
     using System.Windows.Interop;
     using System.Windows.Media;
     using System.Windows.Threading;
+    using MahApps.Metro;
     using Standard;
 
     using HANDLE_MESSAGE = System.Collections.Generic.KeyValuePair<Standard.WM, Standard.MessageHandler>;
@@ -684,7 +685,7 @@ namespace Microsoft.Windows.Shell
         private IntPtr _HandleRestoreWindow(WM uMsg, IntPtr wParam, IntPtr lParam, out bool handled)
         {
             WINDOWPLACEMENT wpl = NativeMethods.GetWindowPlacement(_hwnd);
-            var sc = (SC)(Environment.Is64BitProcess ? wParam.ToInt64() : wParam.ToInt32());
+            var sc = (SC)(EnvironmentUtils.Is64BitProcess ? wParam.ToInt64() : wParam.ToInt32());
             if (SC.RESTORE == sc && wpl.showCmd == SW.SHOWMAXIMIZED && _MinimizeAnimation)
             {
                 var modified = _ModifyStyle(WS.SYSMENU, 0);
@@ -936,7 +937,7 @@ namespace Microsoft.Windows.Shell
         {
             // Emulate the system behavior of clicking the right mouse button over the caption area
             // to bring up the system menu.
-            if (HT.CAPTION == (HT)(Environment.Is64BitProcess ? wParam.ToInt64() : wParam.ToInt32()))
+            if (HT.CAPTION == (HT)(EnvironmentUtils.Is64BitProcess ? wParam.ToInt64() : wParam.ToInt32()))
             {
                 //SystemCommands.ShowSystemMenuPhysicalCoordinates(_window, new Point(Utility.GET_X_LPARAM(lParam), Utility.GET_Y_LPARAM(lParam)));
                 SystemCommands.ShowSystemMenuPhysicalCoordinates(_window, Utility.GetPoint(lParam));
@@ -958,7 +959,7 @@ namespace Microsoft.Windows.Shell
             // maximized.  Not forcing this update will eventually cause the
             // default caption to be drawn.
             WindowState? state = null;
-            if ((Environment.Is64BitProcess ? wParam.ToInt64() : wParam.ToInt32()) == SIZE_MAXIMIZED)
+            if ((EnvironmentUtils.Is64BitProcess ? wParam.ToInt64() : wParam.ToInt32()) == SIZE_MAXIMIZED)
             {
                 state = WindowState.Maximized;
             }
@@ -1266,7 +1267,7 @@ namespace Microsoft.Windows.Shell
         {
             Assert.IsNotDefault(_hwnd);
             var intPtr = NativeMethods.GetWindowLongPtr(_hwnd, GWL.STYLE);
-            var dwStyle = (WS)(Environment.Is64BitProcess ? intPtr.ToInt64() : intPtr.ToInt32());
+            var dwStyle = (WS)(EnvironmentUtils.Is64BitProcess ? intPtr.ToInt64() : intPtr.ToInt32());
             var dwNewStyle = (dwStyle & ~removeStyle) | addStyle;
             if (dwStyle == dwNewStyle)
             {
@@ -1338,7 +1339,7 @@ namespace Microsoft.Windows.Shell
                 if (IntPtr.Zero != hmenu)
                 {
                     var intPtr = NativeMethods.GetWindowLongPtr(_hwnd, GWL.STYLE);
-                    var dwStyle = (WS)(Environment.Is64BitProcess ? intPtr.ToInt64() : intPtr.ToInt32());
+                    var dwStyle = (WS)(EnvironmentUtils.Is64BitProcess ? intPtr.ToInt64() : intPtr.ToInt32());
 
                     bool canMinimize = Utility.IsFlagSet((int)dwStyle, (int)WS.MINIMIZEBOX);
                     bool canMaximize = Utility.IsFlagSet((int)dwStyle, (int)WS.MAXIMIZEBOX);

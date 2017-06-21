@@ -130,7 +130,7 @@
                                                IsHitTestVisible="False"
                                                Opacity="0.25"
                                                SnapsToDevicePixels="True"
-                                               UseLayoutRounding="True" />
+                                               />
                                 </StackPanel>
                                 <ControlTemplate.Triggers>
                                     <Trigger Property="IsSeparatorVisible" Value="False">

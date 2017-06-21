@@ -23,7 +23,7 @@
                                           ContentTemplateSelector="{TemplateBinding ContentTemplateSelector}"
                                           RecognizesAccessKey="{TemplateBinding RecognizesAccessKey}"
                                           SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
-                                          UseLayoutRounding="{TemplateBinding UseLayoutRounding}" />
+                                          />
                     </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger Property="ContentCharacterCasing" Value="Normal">

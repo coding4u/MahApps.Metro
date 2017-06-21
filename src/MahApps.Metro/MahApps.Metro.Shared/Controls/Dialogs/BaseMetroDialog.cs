@@ -5,6 +5,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Animation;
 using JetBrains.Annotations;
+using System.Tuples;
 
 namespace MahApps.Metro.Controls.Dialogs
 {
@@ -159,8 +160,8 @@ namespace MahApps.Metro.Controls.Dialogs
                     return;
                 }
 
-                var theme = windowTheme.Item1;
-                var windowAccent = windowTheme.Item2;
+                var theme = windowTheme.Element1;
+                var windowAccent = windowTheme.Element2;
 
                 switch (this.DialogSettings.ColorScheme)
                 {
@@ -218,7 +219,7 @@ namespace MahApps.Metro.Controls.Dialogs
             // first look for owner
             var window = dialog.OwningWindow ?? dialog.TryFindParent<MetroWindow>();
             var theme = window != null ? ThemeManager.DetectAppStyle(window) : null;
-            if (theme?.Item2 != null)
+            if (theme?.Element2 != null)
             {
                 return theme;
             }
@@ -228,14 +229,14 @@ namespace MahApps.Metro.Controls.Dialogs
             {
                 var mainWindow = Application.Current.MainWindow as MetroWindow;
                 theme = mainWindow != null ? ThemeManager.DetectAppStyle(mainWindow) : null;
-                if (theme?.Item2 != null)
+                if (theme?.Element2 != null)
                 {
                     return theme;
                 }
 
                 // oh no, now look at application resource
                 theme = ThemeManager.DetectAppStyle(Application.Current);
-                if (theme?.Item2 != null)
+                if (theme?.Element2 != null)
                 {
                     return theme;
                 }

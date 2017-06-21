@@ -110,33 +110,33 @@ namespace MahApps.Metro.Controls
 
         private void IsCheckedPropertyChangeNotifierValueChanged(object sender, EventArgs e)
         {
-            UpdateThumb();
+            //UpdateThumb();
         }
 
         DoubleAnimation _thumbAnimation;
-        private void UpdateThumb()
-        {
-            if (_ThumbTranslate != null && _SwitchTrack != null && _ThumbIndicator != null)
-            {
-                double destination = IsChecked.GetValueOrDefault() ? ActualWidth - (_SwitchTrack.Margin.Left + _SwitchTrack.Margin.Right + _ThumbIndicator.ActualWidth + _ThumbIndicator.Margin.Left + _ThumbIndicator.Margin.Right) : 0;
+        //private void UpdateThumb()
+        //{
+        //    if (_ThumbTranslate != null && _SwitchTrack != null && _ThumbIndicator != null)
+        //    {
+        //        double destination = IsChecked.GetValueOrDefault() ? ActualWidth - (_SwitchTrack.Margin.Left + _SwitchTrack.Margin.Right + _ThumbIndicator.ActualWidth + _ThumbIndicator.Margin.Left + _ThumbIndicator.Margin.Right) : 0;
 
-                _thumbAnimation = new DoubleAnimation();
-                _thumbAnimation.To = destination;
-                _thumbAnimation.Duration = TimeSpan.FromMilliseconds(500);
-                _thumbAnimation.EasingFunction = new ExponentialEase() { Exponent = 9 };
-                _thumbAnimation.FillBehavior = FillBehavior.Stop;
+        //        _thumbAnimation = new DoubleAnimation();
+        //        _thumbAnimation.To = destination;
+        //        _thumbAnimation.Duration = TimeSpan.FromMilliseconds(500);
+        //        _thumbAnimation.EasingFunction = new ExponentialEase() { Exponent = 9 };
+        //        _thumbAnimation.FillBehavior = FillBehavior.Stop;
 
-                AnimationTimeline currentAnimation = _thumbAnimation;
-                _thumbAnimation.Completed += (sender, e) => {
-                    if (_thumbAnimation != null && currentAnimation == _thumbAnimation)
-                    {
-                        _ThumbTranslate.X = destination;
-                        _thumbAnimation = null;
-                    }
-                };
-                _ThumbTranslate.BeginAnimation(TranslateTransform.XProperty, _thumbAnimation);
-            }
-        }
+        //        AnimationTimeline currentAnimation = _thumbAnimation;
+        //        _thumbAnimation.Completed += (sender, e) => {
+        //            if (_thumbAnimation != null && currentAnimation == _thumbAnimation)
+        //            {
+        //                _ThumbTranslate.X = destination;
+        //                _thumbAnimation = null;
+        //            }
+        //        };
+        //        _ThumbTranslate.BeginAnimation(TranslateTransform.XProperty, _thumbAnimation);
+        //    }
+        //}
 
         public override void OnApplyTemplate()
         {
@@ -234,7 +234,7 @@ namespace MahApps.Metro.Controls
                 }
                 else
                 {
-                    UpdateThumb();
+                    //UpdateThumb();
                 }
             }
         }

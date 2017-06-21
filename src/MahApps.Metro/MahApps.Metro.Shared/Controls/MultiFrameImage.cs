@@ -53,7 +53,7 @@ namespace MahApps.Metro.Controls
                     .Frames
                     .GroupBy(f => f.PixelWidth * f.PixelHeight)
                     .OrderBy(g => g.Key)
-                    .Select(g => g.OrderByDescending(f => f.Format.BitsPerPixel).First())
+                    .Select(g => (BitmapSource)g.OrderByDescending(f => f.Format.BitsPerPixel).First())
                     );
         }
 

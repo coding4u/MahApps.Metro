@@ -8,6 +8,8 @@ using System.Windows.Media;
 
 namespace MahApps.Metro.Controls
 {
+    using Microsoft.Windows.Controls;
+
     public class DataGridNumericUpDownColumn : DataGridBoundColumn
     {
         private static Style _defaultEditingElementStyle;

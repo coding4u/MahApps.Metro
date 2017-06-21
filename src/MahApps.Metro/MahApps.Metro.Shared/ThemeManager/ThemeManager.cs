@@ -5,6 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
+using System.Tuples;
 
 namespace MahApps.Metro
 {
@@ -281,10 +282,10 @@ namespace MahApps.Metro
                 return null;
             }
 
-            object resource = appStyle.Item1.Resources[key]; //check the theme first
+            object resource = appStyle.Element1.Resources[key]; //check the theme first
 
             //next check the accent
-            var accentResource = appStyle.Item2.Resources[key];
+            var accentResource = appStyle.Element2.Resources[key];
             if (accentResource != null)
                 return accentResource;
 
@@ -306,7 +307,7 @@ namespace MahApps.Metro
             AppTheme matched;
             if ((matched = GetAppTheme(themeName)) != null)
             {
-                ChangeAppStyle(app.Resources, oldTheme, oldTheme.Item2, matched);
+                ChangeAppStyle(app.Resources, oldTheme, oldTheme.Element2, matched);
             }
         }
 
@@ -325,7 +326,7 @@ namespace MahApps.Metro
             AppTheme matched;
             if ((matched = GetAppTheme(themeName)) != null)
             {
-                ChangeAppStyle(window.Resources, oldTheme, oldTheme.Item2, matched);
+                ChangeAppStyle(window.Resources, oldTheme, oldTheme.Element2, matched);
             }
         }
 
@@ -365,7 +366,7 @@ namespace MahApps.Metro
             var themeChanged = false;
             if (oldThemeInfo != null)
             {
-                var oldAccent = oldThemeInfo.Item2;
+                var oldAccent = oldThemeInfo.Element2;
                 if (oldAccent != null && oldAccent.Name != newAccent.Name)
                 {
                     var key = oldAccent.Resources.Source.ToString().ToLower();
@@ -379,7 +380,7 @@ namespace MahApps.Metro
                     }
                 }
 
-                var oldTheme = oldThemeInfo.Item1;
+                var oldTheme = oldThemeInfo.Element1;
                 if (oldTheme != null && oldTheme != newTheme)
                 {
                     var key = oldTheme.Resources.Source.ToString().ToLower();
@@ -516,7 +517,7 @@ namespace MahApps.Metro
             if (DetectThemeFromResources(ref currentTheme, resources))
             {
                 if (GetThemeFromResources(currentTheme, resources, ref detectedAccentTheme))
-                    return new Tuple<AppTheme, Accent>(detectedAccentTheme.Item1, detectedAccentTheme.Item2);
+                    return new Tuple<AppTheme, Accent>(detectedAccentTheme.Element1, detectedAccentTheme.Element2);
             }
 
             return null;
@@ -561,7 +562,7 @@ namespace MahApps.Metro
             Accent matched;
             if ((matched = GetAccent(dict)) != null)
             {
-                detectedAccentTheme = Tuple.Create(currentTheme, matched);
+                detectedAccentTheme = Tuple.New(currentTheme, matched);
                 return true;
             }
 

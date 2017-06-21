@@ -183,19 +183,19 @@ namespace MahApps.Metro.Controls
         {
             this.Dispatcher.BeginInvoke(DispatcherPriority.Loaded,
                                         new Action(() => {
-                                                       if (string.IsNullOrWhiteSpace(this.Minimize))
+                                                       if (StringUtils.IsNullOrWhiteSpace(this.Minimize))
                                                        {
                                                            this.Minimize = GetCaption(900);
                                                        }
-                                                       if (string.IsNullOrWhiteSpace(this.Maximize))
+                                                       if (StringUtils.IsNullOrWhiteSpace(this.Maximize))
                                                        {
                                                            this.Maximize = GetCaption(901);
                                                        }
-                                                       if (string.IsNullOrWhiteSpace(this.Close))
+                                                       if (StringUtils.IsNullOrWhiteSpace(this.Close))
                                                        {
                                                            this.Close = GetCaption(905);
                                                        }
-                                                       if (string.IsNullOrWhiteSpace(this.Restore))
+                                                       if (StringUtils.IsNullOrWhiteSpace(this.Restore))
                                                        {
                                                            this.Restore = GetCaption(903);
                                                        }

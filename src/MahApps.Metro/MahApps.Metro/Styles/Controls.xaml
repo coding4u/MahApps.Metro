@@ -1,7 +1,8 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:Controls="clr-namespace:MahApps.Metro.Controls"
-                    xmlns:converters="clr-namespace:MahApps.Metro.Converters">
+                    xmlns:converters="clr-namespace:MahApps.Metro.Converters"
+                    xmlns:controls="http://schemas.microsoft.com/wpf/2008/toolkit">
 
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Sizes.xaml" />
@@ -58,17 +59,16 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ContentControl}">
-                    <Viewbox Margin="{TemplateBinding Padding}" UseLayoutRounding="True">
+                    <Viewbox Margin="{TemplateBinding Padding}" >
                         <Path Data="{Binding Content, RelativeSource={RelativeSource TemplatedParent}, Mode=OneWay, Converter={converters:NullToUnsetValueConverter}}"
                               Fill="{TemplateBinding Foreground}"
                               SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
                               Stretch="Uniform"
-                              UseLayoutRounding="False" />
+                              />
                     </Viewbox>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
-        <Setter Property="UseLayoutRounding" Value="False" />
         <Setter Property="VerticalAlignment" Value="Center" />
         <Setter Property="Width" Value="16" />
     </Style>
@@ -105,10 +105,10 @@
     <Style BasedOn="{StaticResource MetroListViewItem}" TargetType="ListViewItem" />
     <Style BasedOn="{StaticResource MetroTreeView}" TargetType="TreeView" />
     <Style BasedOn="{StaticResource MetroTreeViewItem}" TargetType="TreeViewItem" />
-    <Style BasedOn="{StaticResource MetroDatePicker}" TargetType="DatePicker" />
-    <Style BasedOn="{StaticResource MetroDatePickerTextBox}" TargetType="DatePickerTextBox" />
-    <Style BasedOn="{StaticResource MetroCalendar}" TargetType="Calendar" />
-    <Style BasedOn="{StaticResource MetroDataGrid}" TargetType="DataGrid" />
+    <Style BasedOn="{StaticResource MetroDatePicker}" TargetType="controls:DatePicker" />
+    <Style BasedOn="{StaticResource MetroDatePickerTextBox}" TargetType="controls:DatePickerTextBox" />
+    <Style BasedOn="{StaticResource MetroCalendar}" TargetType="controls:Calendar" />
+    <Style BasedOn="{StaticResource MetroDataGrid}" TargetType="controls:DataGrid" />
     <Style BasedOn="{StaticResource MetroStatusBar}" TargetType="StatusBar" />
     <Style BasedOn="{StaticResource MetroStatusBarItem}" TargetType="StatusBarItem" />
     <Style BasedOn="{StaticResource MetroScrollViewer}" TargetType="ScrollViewer" />

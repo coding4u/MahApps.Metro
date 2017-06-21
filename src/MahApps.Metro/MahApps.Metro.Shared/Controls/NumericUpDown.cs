@@ -6,6 +6,7 @@ namespace MahApps.Metro.Controls
     using System.Linq;
     using System.Reflection;
     using System.Text.RegularExpressions;
+    using System.Tuples;
     using System.Windows;
     using System.Windows.Controls;
     using System.Windows.Controls.Primitives;
@@ -171,7 +172,7 @@ namespace MahApps.Metro.Controls
         private const StringComparison StrComp = StringComparison.InvariantCultureIgnoreCase;
 
         private Tuple<string, string> _removeFromText = new Tuple<string, string>(string.Empty, string.Empty);
-        private Lazy<PropertyInfo> _handlesMouseWheelScrolling = new Lazy<PropertyInfo>();
+        private PropertyInfo _handlesMouseWheelScrolling = null;
         private double _internalIntervalMultiplierForCalculation = DefaultInterval;
         private double _internalLargeChange = DefaultInterval * 100;
         private double _intervalValueSinceReset;
@@ -632,19 +633,19 @@ namespace MahApps.Metro.Controls
                 ChangeValueInternal(increment);
             }
 
-            if (_scrollViewer != null && _handlesMouseWheelScrolling.Value != null)
+            if (_scrollViewer != null && _handlesMouseWheelScrolling != null)
             {
                 if (TrackMouseWheelWhenMouseOver)
                 {
-                    _handlesMouseWheelScrolling.Value.SetValue(_scrollViewer, true, null);
+                    _handlesMouseWheelScrolling.SetValue(_scrollViewer, true, null);
                 }
                 else if (InterceptMouseWheel)
                 {
-                    _handlesMouseWheelScrolling.Value.SetValue(_scrollViewer, _valueTextBox.IsFocused, null);
+                    _handlesMouseWheelScrolling.SetValue(_scrollViewer, _valueTextBox.IsFocused, null);
                 }
                 else
                 {
-                    _handlesMouseWheelScrolling.Value.SetValue(_scrollViewer, true, null);
+                    _handlesMouseWheelScrolling.SetValue(_scrollViewer, true, null);
                 }
             }
         }
@@ -652,7 +653,7 @@ namespace MahApps.Metro.Controls
         protected void OnPreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             e.Handled = true;
-            if (string.IsNullOrWhiteSpace(e.Text) ||
+            if (StringUtils.IsNullOrWhiteSpace(e.Text) ||
                 e.Text.Length != 1)
             {
                 return;
@@ -894,7 +895,7 @@ namespace MahApps.Metro.Controls
 
             if (!nud.HasDecimals && RegexStringFormatHexadecimal.IsMatch((string)e.NewValue))
             {
-                nud.SetCurrentValue(HasDecimalsProperty, true);
+                nud.SetValue(HasDecimalsProperty, true);
             }
         }
 
@@ -980,7 +981,7 @@ namespace MahApps.Metro.Controls
             var scrollViewer = _valueTextBox.Template.FindName("PART_ContentHost", _valueTextBox) as ScrollViewer;
             if (scrollViewer != null)
             {
-                _handlesMouseWheelScrolling = new Lazy<PropertyInfo>(() => _scrollViewer.GetType().GetProperties(BindingFlags.NonPublic | BindingFlags.Instance).SingleOrDefault(i => i.Name == "HandlesMouseWheelScrolling"));
+                _handlesMouseWheelScrolling = _scrollViewer.GetType().GetProperties(BindingFlags.NonPublic | BindingFlags.Instance).SingleOrDefault(i => i.Name == "HandlesMouseWheelScrolling");
             }
             return scrollViewer;
         }
@@ -1200,13 +1201,13 @@ namespace MahApps.Metro.Controls
         private string RemoveStringFormatFromText(string text)
         {
             // remove special string formattings in order to be able to parse it to double e.g. StringFormat = "{0:N2} pcs." then remove pcs. from text
-            if (!string.IsNullOrEmpty(_removeFromText.Item1))
+            if (!string.IsNullOrEmpty(_removeFromText.Element1))
             {
-                text = text.Replace(_removeFromText.Item1, string.Empty);
+                text = text.Replace(_removeFromText.Element1, string.Empty);
             }
-            if (!string.IsNullOrEmpty(_removeFromText.Item2))
+            if (!string.IsNullOrEmpty(_removeFromText.Element2))
             {
-                text = text.Replace(_removeFromText.Item2, string.Empty);
+                text = text.Replace(_removeFromText.Element2, string.Empty);
             }
             return text;
         }

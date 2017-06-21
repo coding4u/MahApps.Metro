@@ -6,7 +6,6 @@
 
     <Style x:Key="StandardTextBox" TargetType="{x:Type TextBox}">
         <Setter Property="Background" Value="{StaticResource TextBoxBackground}" />
-        <Setter Property="CaretBrush" Value="{StaticResource Foreground}" />
         <Setter Property="Foreground" Value="{StaticResource Foreground}" />
         <Setter Property="Padding" Value="1" />
         <Setter Property="SnapsToDevicePixels" Value="True" />

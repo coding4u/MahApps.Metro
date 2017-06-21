@@ -1,5 +1,4 @@
 ﻿using System;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
@@ -11,10 +10,11 @@ using System.ComponentModel;
 using System.Collections.Generic;
 using System.Reflection;
 using System.Windows.Data;
-using JetBrains.Annotations;
 
 namespace MahApps.Metro.Controls
 {
+    using Microsoft.Windows.Controls;
+
     public interface ISpellCheckMenuItem
     {
     }
@@ -173,18 +173,17 @@ namespace MahApps.Metro.Controls
             if (resolvedProperty != null)
             {
 #if NET4
-                var attribute = resolvedProperty.GetCustomAttributes(typeof(DisplayAttribute), false).FirstOrDefault() as DisplayAttribute;
+                //var attribute = resolvedProperty.GetCustomAttributes(typeof(DisplayAttribute), false).FirstOrDefault() as DisplayAttribute;
 #else
                 var attribute = resolvedProperty.GetCustomAttribute<DisplayAttribute>();
 #endif
-                if (attribute != null)
-                {
-                    obj.SetValue(WatermarkProperty, attribute.GetPrompt());
-                }
+                //if (attribute != null)
+                //{
+                //    obj.SetValue(WatermarkProperty, attribute.GetPrompt());
+                //}
             }
         }
 
-        [CanBeNull]
         private static PropertyInfo ResolvePropertyFromBindingExpression(BindingExpression bindingExpression)
         {
             if (bindingExpression != null)
@@ -220,7 +219,6 @@ namespace MahApps.Metro.Controls
         }
 
 #if NET4
-        [CanBeNull]
         private static Type ResolveBinding(Type type, string[] paths)
         {
             if (type != null && paths != null)
@@ -335,7 +333,7 @@ namespace MahApps.Metro.Controls
             }
         }
 
-        private static void RemoveSpellCheckMenuItems([CanBeNull] FrameworkElement tbBase)
+        private static void RemoveSpellCheckMenuItems(FrameworkElement tbBase)
         {
             if (tbBase?.ContextMenu == null)
             {
@@ -871,7 +869,7 @@ namespace MahApps.Metro.Controls
             var comboBox = sender as ComboBox;
             if (comboBox != null)
             {
-                comboBox.SetValue(HasTextProperty, !string.IsNullOrWhiteSpace(comboBox.Text) || comboBox.SelectedItem != null);
+                comboBox.SetValue(HasTextProperty, !string.IsNullOrEmpty(comboBox.Text) || comboBox.SelectedItem != null);
             }
         }
     }

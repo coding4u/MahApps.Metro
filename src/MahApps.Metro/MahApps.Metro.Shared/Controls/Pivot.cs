@@ -64,12 +64,12 @@ namespace MahApps.Metro.Controls
             }
 
             mediator.HorizontalOffset = scroller.HorizontalOffset;
-            var sb = mediator.Resources["Storyboard1"] as Storyboard;
-            var frame = (EasingDoubleKeyFrame)mediator.FindName("edkf");
-            frame.Value = widthToScroll;
-            sb.Completed -= sb_Completed;
-            sb.Completed += sb_Completed;
-            sb.Begin();
+            //var sb = mediator.Resources["Storyboard1"] as Storyboard;
+            //var frame = (EasingDoubleKeyFrame)mediator.FindName("edkf");
+            //frame.Value = widthToScroll;
+            //sb.Completed -= sb_Completed;
+            //sb.Completed += sb_Completed;
+            //sb.Begin();
 
             RaiseEvent(new RoutedEventArgs(SelectionChangedEvent));
         }

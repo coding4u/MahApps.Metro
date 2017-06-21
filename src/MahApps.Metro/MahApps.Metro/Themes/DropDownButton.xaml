@@ -42,7 +42,7 @@
                                     <Canvas Width="18"
                                             Height="18"
                                             Clip="F1 M 0,0L 48,0L 48,48L 0,48L 0,0"
-                                            UseLayoutRounding="False">
+                                           >
                                         <Path Canvas.Left="14.9063"
                                               Canvas.Top="15.75"
                                               Width="18"
@@ -69,7 +69,7 @@
                                  ItemsSource="{TemplateBinding ItemsSource}"
                                  Placement="Bottom"
                                  StaysOpen="False"
-                                 UseLayoutRounding="False" />
+                                 />
                 </Button.ContextMenu>
             </Button>
         </Border>
@@ -117,7 +117,7 @@
                                     <Canvas Width="18"
                                             Height="18"
                                             Clip="F1 M 0,0L 48,0L 48,48L 0,48L 0,0"
-                                            UseLayoutRounding="False">
+                                            >
                                         <Path Canvas.Left="14.9063"
                                               Canvas.Top="15.75"
                                               Width="18"
@@ -144,7 +144,7 @@
                                  ItemsSource="{TemplateBinding ItemsSource}"
                                  Placement="Bottom"
                                  StaysOpen="False"
-                                 UseLayoutRounding="False" />
+                                 />
                 </Button.ContextMenu>
             </Button>
         </Border>
@@ -190,7 +190,7 @@
                             BorderThickness="{TemplateBinding BorderThickness}"
                             CornerRadius="{TemplateBinding Controls:ControlsHelper.CornerRadius}"
                             SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
-                            UseLayoutRounding="True">
+                            >
                         <Controls:ClipBorder x:Name="PART_ClipBorder"
                                              CornerRadius="{TemplateBinding Controls:ControlsHelper.CornerRadius}"
                                              SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
@@ -206,7 +206,6 @@
                                     CommandTarget="{TemplateBinding CommandTarget}"
                                     FocusVisualStyle="{TemplateBinding FocusVisualStyle}"
                                     Foreground="{TemplateBinding Foreground}"
-                                    RenderOptions.ClearTypeHint="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(RenderOptions.ClearTypeHint), Mode=OneWay}"
                                     SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
                                     Style="{TemplateBinding ButtonStyle}">
                                 <DockPanel x:Name="PART_Content"
@@ -235,7 +234,7 @@
                                                           ContentTemplate="{TemplateBinding IconTemplate}"
                                                           Focusable="False"
                                                           RecognizesAccessKey="True"
-                                                          UseLayoutRounding="False" />
+                                                          />
                                         <Controls:ContentControlEx x:Name="PART_ButtonContent"
                                                                    Margin="3"
                                                                    Padding="{TemplateBinding Padding}"
@@ -250,7 +249,7 @@
                                                                    ContentTemplateSelector="{TemplateBinding ContentTemplateSelector}"
                                                                    RecognizesAccessKey="True"
                                                                    SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
-                                                                   UseLayoutRounding="False" />
+                                                                   />
                                     </StackPanel>
                                 </DockPanel>
                                 <Button.ContextMenu>
@@ -268,7 +267,7 @@
                                                  Placement="Bottom"
                                                  StaysOpen="False"
                                                  Style="{TemplateBinding MenuStyle}"
-                                                 UseLayoutRounding="False" />
+                                                 />
                                 </Button.ContextMenu>
                             </Button>
                         </Controls:ClipBorder>

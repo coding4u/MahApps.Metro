@@ -4,8 +4,10 @@
     using System.ComponentModel;
     using System.Windows;
     using System.Windows.Controls;
-    using System.Windows.Controls.Primitives;
+    //using System.Windows.Controls.Primitives;
     using System.Windows.Input;
+    using Microsoft.Windows.Controls;
+    using Microsoft.Windows.Controls.Primitives;
 
     /// <summary>
     ///     Represents a control that allows the user to select a date and a time.

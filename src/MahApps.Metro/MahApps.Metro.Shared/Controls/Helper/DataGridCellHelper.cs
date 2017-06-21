@@ -1,10 +1,10 @@
 ﻿using System.Windows;
-using System.Windows.Controls;
 
 namespace MahApps.Metro.Controls
 {
     using System;
     using System.ComponentModel;
+    using Microsoft.Windows.Controls;
 
     public class DataGridCellHelper
     {

@@ -107,7 +107,7 @@
                                                Foreground="{DynamicResource ValidationTextBrush}"
                                                Text="{Binding ErrorContent}"
                                                TextWrapping="Wrap"
-                                               UseLayoutRounding="False" />
+                                               />
                                 </DataTemplate>
                             </Border.Resources>
                             <ItemsControl ItemsSource="{Binding}" />

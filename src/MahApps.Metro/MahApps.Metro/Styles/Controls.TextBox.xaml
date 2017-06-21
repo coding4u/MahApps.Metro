@@ -15,7 +15,6 @@
         <Setter Property="Background" Value="{DynamicResource ControlBackgroundBrush}" />
         <Setter Property="BorderBrush" Value="{DynamicResource TextBoxBorderBrush}" />
         <Setter Property="BorderThickness" Value="1" />
-        <Setter Property="CaretBrush" Value="{DynamicResource BlackBrush}" />
         <Setter Property="ContextMenu" Value="{DynamicResource TextBoxMetroContextMenu}" />
         <Setter Property="Controls:ControlsHelper.FocusBorderBrush" Value="{DynamicResource TextBoxFocusBorderBrush}" />
         <Setter Property="Controls:ControlsHelper.MouseOverBorderBrush" Value="{DynamicResource TextBoxMouseOverBorderBrush}" />
@@ -27,7 +26,6 @@
         <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
         <Setter Property="MinHeight" Value="26" />
         <Setter Property="Padding" Value="0" />
-        <Setter Property="SelectionBrush" Value="{DynamicResource HighlightBrush}" />
         <!--  change SnapsToDevicePixels to True to view a better border and validation error  -->
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="Template">
@@ -61,9 +59,6 @@
                     </ControlTemplate.Resources>
                     <Grid>
                         <AdornerDecorator x:Name="PART_WaitingForDataEffectAdornerDecorator" Visibility="Collapsed">
-                            <AdornerDecorator.CacheMode>
-                                <BitmapCache EnableClearType="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
-                            </AdornerDecorator.CacheMode>
                             <Border x:Name="PART_WaitingForDataEffectGrid"
                                     Background="{TemplateBinding Background}"
                                     BorderBrush="Transparent"
@@ -284,9 +279,6 @@
                     </ControlTemplate.Resources>
                     <Grid>
                         <AdornerDecorator x:Name="PART_WaitingForDataEffectAdornerDecorator" Visibility="Collapsed">
-                            <AdornerDecorator.CacheMode>
-                                <BitmapCache EnableClearType="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
-                            </AdornerDecorator.CacheMode>
                             <Border x:Name="PART_WaitingForDataEffectGrid"
                                     Background="{TemplateBinding Background}"
                                     BorderBrush="Transparent"
@@ -499,7 +491,6 @@
         <Setter Property="Background" Value="{DynamicResource ControlBackgroundBrush}" />
         <Setter Property="BorderBrush" Value="{DynamicResource TextBoxBorderBrush}" />
         <Setter Property="BorderThickness" Value="1" />
-        <Setter Property="CaretBrush" Value="{DynamicResource BlackBrush}" />
         <Setter Property="ContextMenu" Value="{DynamicResource TextBoxMetroContextMenu}" />
         <Setter Property="Controls:ControlsHelper.FocusBorderBrush" Value="{DynamicResource TextBoxFocusBorderBrush}" />
         <Setter Property="Controls:ControlsHelper.MouseOverBorderBrush" Value="{DynamicResource TextBoxMouseOverBorderBrush}" />
@@ -510,8 +501,6 @@
         <Setter Property="MinHeight" Value="26" />
         <Setter Property="MinWidth" Value="10" />
         <Setter Property="Padding" Value="1" />
-        <Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst" />
-        <Setter Property="SelectionBrush" Value="{DynamicResource HighlightBrush}" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="Stylus.IsFlicksEnabled" Value="False" />
         <Setter Property="Template">

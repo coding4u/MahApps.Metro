@@ -10,7 +10,7 @@ namespace MahApps.Metro.Controls
     /// </summary>
     public class MetroThumbContentControl : ContentControlEx, IMetroThumb
     {
-        private TouchDevice currentDevice = null;
+        //private TouchDevice currentDevice = null;
         private Point startDragPoint;
         private Point startDragScreenPoint;
         private Point oldDragScreenPoint;
@@ -194,48 +194,48 @@ namespace MahApps.Metro.Controls
             }
         }
 
-        protected override void OnPreviewTouchDown(TouchEventArgs e)
-        {
-            // Release any previous capture
-            this.ReleaseCurrentDevice();
-            // Capture the new touch
-            this.CaptureCurrentDevice(e);
-        }
+        //protected override void OnPreviewTouchDown(TouchEventArgs e)
+        //{
+        //    // Release any previous capture
+        //    this.ReleaseCurrentDevice();
+        //    // Capture the new touch
+        //    this.CaptureCurrentDevice(e);
+        //}
 
-        protected override void OnPreviewTouchUp(TouchEventArgs e)
-        {
-            this.ReleaseCurrentDevice();
-        }
+        //protected override void OnPreviewTouchUp(TouchEventArgs e)
+        //{
+        //    this.ReleaseCurrentDevice();
+        //}
 
-        protected override void OnLostTouchCapture(TouchEventArgs e)
-        {
-            // Only re-capture if the reference is not null
-            // This way we avoid re-capturing after calling ReleaseCurrentDevice()
-            if (this.currentDevice != null)
-            {
-                this.CaptureCurrentDevice(e);
-            }
-        }
+        //protected override void OnLostTouchCapture(TouchEventArgs e)
+        //{
+        //    // Only re-capture if the reference is not null
+        //    // This way we avoid re-capturing after calling ReleaseCurrentDevice()
+        //    if (this.currentDevice != null)
+        //    {
+        //        this.CaptureCurrentDevice(e);
+        //    }
+        //}
 
-        private void ReleaseCurrentDevice()
-        {
-            if (this.currentDevice != null)
-            {
-                // Set the reference to null so that we don't re-capture in the OnLostTouchCapture() method
-                var temp = this.currentDevice;
-                this.currentDevice = null;
-                this.ReleaseTouchCapture(temp);
-            }
-        }
+        //private void ReleaseCurrentDevice()
+        //{
+        //    if (this.currentDevice != null)
+        //    {
+        //        // Set the reference to null so that we don't re-capture in the OnLostTouchCapture() method
+        //        var temp = this.currentDevice;
+        //        this.currentDevice = null;
+        //        this.ReleaseTouchCapture(temp);
+        //    }
+        //}
 
-        private void CaptureCurrentDevice(TouchEventArgs e)
-        {
-            bool gotTouch = this.CaptureTouch(e.TouchDevice);
-            if (gotTouch)
-            {
-                this.currentDevice = e.TouchDevice;
-            }
-        }
+        //private void CaptureCurrentDevice(TouchEventArgs e)
+        //{
+        //    bool gotTouch = this.CaptureTouch(e.TouchDevice);
+        //    if (gotTouch)
+        //    {
+        //        this.currentDevice = e.TouchDevice;
+        //    }
+        //}
 
         protected override AutomationPeer OnCreateAutomationPeer()
         {

@@ -346,7 +346,7 @@
                                     BorderThickness="{TemplateBinding BorderThickness}"
                                     DockPanel.Dock="Top"
                                     SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
-                                    UseLayoutRounding="True">
+                                    >
                                 <ToggleButton x:Name="ToggleSite"
                                               Controls:ControlsHelper.ContentCharacterCasing="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(Controls:ControlsHelper.ContentCharacterCasing)}"
                                               Content="{TemplateBinding Header}"
@@ -358,7 +358,7 @@
                                               FontWeight="{TemplateBinding Controls:ControlsHelper.HeaderFontWeight}"
                                               IsChecked="{Binding IsExpanded, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
                                               Style="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(Controls:ExpanderHelper.HeaderDownStyle)}"
-                                              UseLayoutRounding="False">
+                                              >
                                     <ToggleButton.Foreground>
                                         <MultiBinding Converter="{x:Static Converters:BackgroundToForegroundConverter.Instance}">
                                             <Binding Mode="OneWay"
@@ -381,13 +381,12 @@
                                     Focusable="false"
                                     Opacity="0"
                                     SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
-                                    UseLayoutRounding="True"
                                     Visibility="Collapsed">
                                 <ContentPresenter Margin="{TemplateBinding Padding}"
                                                   Content="{TemplateBinding Content}"
                                                   ContentTemplate="{TemplateBinding ContentTemplate}"
                                                   Cursor="{TemplateBinding Cursor}"
-                                                  UseLayoutRounding="False" />
+                                                  />
                             </Border>
                         </DockPanel>
                         <VisualStateManager.VisualStateGroups>
@@ -400,7 +399,6 @@
                                             <SplineDoubleKeyFrame KeyTime="0" Value="0.7" />
                                         </DoubleAnimationUsingKeyFrames>
                                         <DoubleAnimationUsingKeyFrames Storyboard.TargetName="ExpanderRoot" Storyboard.TargetProperty="(UIElement.Opacity)">
-                                            <EasingDoubleKeyFrame KeyTime="0" Value="0.3" />
                                         </DoubleAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>

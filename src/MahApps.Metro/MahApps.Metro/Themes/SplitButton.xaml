@@ -3,7 +3,7 @@
                     xmlns:Controls="clr-namespace:MahApps.Metro.Controls">
 
     <ControlTemplate x:Key="SplitButtonHorizontal" TargetType="{x:Type Controls:SplitButton}">
-        <Grid UseLayoutRounding="True">
+        <Grid >
             <Border x:Name="PART_Border"
                     Background="Transparent"
                     BorderBrush="{TemplateBinding BorderBrush}"
@@ -44,7 +44,7 @@
                                                   ContentTemplate="{TemplateBinding IconTemplate}"
                                                   Focusable="False"
                                                   RecognizesAccessKey="True"
-                                                  UseLayoutRounding="False" />
+                                                  />
                                 <Controls:ContentControlEx x:Name="PART_ButtonContent"
                                                            Margin="2"
                                                            Padding="{TemplateBinding Padding}"
@@ -59,7 +59,7 @@
                                                            ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}"
                                                            RecognizesAccessKey="True"
                                                            SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
-                                                           UseLayoutRounding="False" />
+                                                           />
                             </StackPanel>
                         </Button>
                         <Button x:Name="PART_Expander"
@@ -101,7 +101,6 @@
                          ItemTemplate="{TemplateBinding ItemTemplate}"
                          ItemTemplateSelector="{TemplateBinding ItemTemplateSelector}"
                          ItemsPanel="{TemplateBinding ItemsPanel}"
-                         RenderOptions.ClearTypeHint="{TemplateBinding RenderOptions.ClearTypeHint}"
                          SelectedIndex="{Binding SelectedIndex, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
                          SelectedItem="{Binding SelectedItem, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
                          SelectedValue="{Binding SelectedValue, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
@@ -122,7 +121,7 @@
     </ControlTemplate>
 
     <ControlTemplate x:Key="SplitButtonVertical" TargetType="{x:Type Controls:SplitButton}">
-        <Grid UseLayoutRounding="True">
+        <Grid >
             <Border x:Name="PART_Border"
                     Background="Transparent"
                     BorderBrush="{TemplateBinding BorderBrush}"
@@ -163,7 +162,7 @@
                                                   ContentTemplate="{TemplateBinding IconTemplate}"
                                                   Focusable="False"
                                                   RecognizesAccessKey="True"
-                                                  UseLayoutRounding="False" />
+                                                  />
                                 <Controls:ContentControlEx x:Name="PART_ButtonContent"
                                                            Margin="2"
                                                            Padding="{TemplateBinding Padding}"
@@ -178,7 +177,7 @@
                                                            ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}"
                                                            RecognizesAccessKey="True"
                                                            SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
-                                                           UseLayoutRounding="False" />
+                                                           />
                             </StackPanel>
                         </Button>
                         <Button x:Name="PART_Expander"
@@ -220,7 +219,6 @@
                          ItemTemplate="{TemplateBinding ItemTemplate}"
                          ItemTemplateSelector="{TemplateBinding ItemTemplateSelector}"
                          ItemsPanel="{TemplateBinding ItemsPanel}"
-                         RenderOptions.ClearTypeHint="{TemplateBinding RenderOptions.ClearTypeHint}"
                          SelectedIndex="{Binding SelectedIndex, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
                          SelectedItem="{Binding SelectedItem, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
                          SelectedValue="{Binding SelectedValue, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
@@ -271,7 +269,6 @@
         <Setter Property="HorizontalContentAlignment" Value="Center" />
         <Setter Property="ListBoxStyle" Value="{DynamicResource VirtualisedMetroListBox}" />
         <Setter Property="MinHeight" Value="26" />
-        <Setter Property="RenderOptions.ClearTypeHint" Value="Enabled" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="Template" Value="{StaticResource SplitButtonHorizontal}" />
         <Setter Property="VerticalContentAlignment" Value="Center" />

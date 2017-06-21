@@ -40,7 +40,7 @@
                                   Fill="{DynamicResource HighlightBrush}"
                                   Opacity="0"
                                   Stretch="Fill"
-                                  UseLayoutRounding="False" />
+                                  />
                             <Rectangle x:Name="IndeterminateCheck"
                                        Width="8"
                                        Height="3"

@@ -39,7 +39,6 @@
                                Fill="{TemplateBinding WindowTitleBrush}"
                                Focusable="False"
                                StrokeThickness="0"
-                               UseLayoutRounding="True"
                                Visibility="{TemplateBinding ShowTitleBar,
                                                             Converter={StaticResource BooleanToVisibilityConverter}}" />
 
@@ -125,7 +124,7 @@
                                       Panel.ZIndex="1"
                                       Content="{Binding WindowButtonCommands, RelativeSource={RelativeSource TemplatedParent}, Mode=OneWay}"
                                       Focusable="False"
-                                      UseLayoutRounding="True" />
+                                      />
 
                     <!--  the main window content  -->
                     <Controls:MetroContentControl x:Name="PART_Content"
@@ -136,7 +135,7 @@
                                                   IsTabStop="False"
                                                   OnlyLoadTransition="True"
                                                   TransitionsEnabled="{TemplateBinding WindowTransitionsEnabled}"
-                                                  UseLayoutRounding="True">
+                                                  >
                         <ContentPresenter />
                     </Controls:MetroContentControl>
 
@@ -206,12 +205,11 @@
                     Background="{x:Null}"
                     BorderBrush="{TemplateBinding GlowBrush}"
                     BorderThickness="{TemplateBinding BorderThickness}"
-                    UseLayoutRounding="True" />
+                    />
             <ResizeGrip x:Name="WindowResizeGrip"
                         HorizontalAlignment="Right"
                         VerticalAlignment="Bottom"
                         IsTabStop="False"
-                        UseLayoutRounding="True"
                         Visibility="Collapsed" />
         </Grid>
 
@@ -314,7 +312,6 @@
                                Fill="{TemplateBinding WindowTitleBrush}"
                                Focusable="False"
                                StrokeThickness="0"
-                               UseLayoutRounding="True"
                                Visibility="{TemplateBinding ShowTitleBar,
                                                             Converter={StaticResource BooleanToVisibilityConverter}}" />
 
@@ -401,7 +398,7 @@
                                       Panel.ZIndex="1"
                                       Content="{Binding WindowButtonCommands, RelativeSource={RelativeSource TemplatedParent}, Mode=OneWay}"
                                       Focusable="False"
-                                      UseLayoutRounding="True" />
+                                      />
 
                     <!--  the main window content  -->
                     <Controls:MetroContentControl x:Name="PART_Content"
@@ -412,7 +409,7 @@
                                                   IsTabStop="False"
                                                   OnlyLoadTransition="True"
                                                   TransitionsEnabled="{TemplateBinding WindowTransitionsEnabled}"
-                                                  UseLayoutRounding="True">
+                                                  >
                         <ContentPresenter />
                     </Controls:MetroContentControl>
 
@@ -482,12 +479,11 @@
                     Background="{x:Null}"
                     BorderBrush="{TemplateBinding GlowBrush}"
                     BorderThickness="{TemplateBinding BorderThickness}"
-                    UseLayoutRounding="True" />
+                    />
             <ResizeGrip x:Name="WindowResizeGrip"
                         HorizontalAlignment="Right"
                         VerticalAlignment="Bottom"
                         IsTabStop="False"
-                        UseLayoutRounding="True"
                         Visibility="Collapsed" />
         </Grid>
 

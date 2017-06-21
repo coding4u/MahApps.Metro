@@ -3,8 +3,9 @@
                     xmlns:behaviours="clr-namespace:MahApps.Metro.Behaviours"
                     xmlns:controls="clr-namespace:MahApps.Metro.Controls"
                     xmlns:converters="clr-namespace:MahApps.Metro.Converters"
-                    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
-                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+                    xmlns:system="clr-namespace:System;assembly=mscorlib"
+                    xmlns:primitives="http://schemas.microsoft.com/wpf/2008/toolkit"
+                    xmlns:interactivity="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity">
 
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Shared.xaml" />
@@ -137,24 +138,23 @@
                                     <RowDefinition Height="Auto" />
                                     <RowDefinition x:Name="ButtonRow" Height="*" />
                                 </Grid.RowDefinitions>
-                                <DatePickerTextBox x:Name="PART_TextBox"
+                                <primitives:DatePickerTextBox x:Name="PART_TextBox"
                                                    Grid.Row="1"
                                                    VerticalAlignment="Center"
                                                    HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
                                                    VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
                                                    controls:TextBoxHelper.Watermark="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(controls:TextBoxHelper.Watermark), Mode=OneWay}"
                                                    controls:TextBoxHelper.WatermarkAlignment="{TemplateBinding controls:TextBoxHelper.WatermarkAlignment}"
-                                                   CaretBrush="{DynamicResource BlackBrush}"
                                                    ContextMenu="{DynamicResource TextBoxMetroContextMenu}"
                                                    Focusable="{TemplateBinding Focusable}"
                                                    FontSize="{TemplateBinding FontSize}"
                                                    Foreground="{TemplateBinding Foreground}"
                                                    IsReadOnly="{Binding Path=IsReadOnly, RelativeSource={RelativeSource TemplatedParent}}"
-                                                   SelectionBrush="{DynamicResource HighlightBrush}">
-                                    <i:Interaction.Behaviors>
+                                                   >
+                                    <interactivity:Interaction.Behaviors>
                                         <behaviours:DatePickerTextBoxBehavior />
-                                    </i:Interaction.Behaviors>
-                                </DatePickerTextBox>
+                                    </interactivity:Interaction.Behaviors>
+                                </primitives:DatePickerTextBox>
                                 <ContentControl x:Name="PART_FloatingMessageContainer"
                                                 Grid.Row="0"
                                                 Grid.Column="0"
@@ -207,7 +207,7 @@
                                             BorderBrush="{DynamicResource ControlBorderBrush}"
                                             BorderThickness="1">
                                         <StackPanel x:Name="StackPanel" Background="{DynamicResource ControlBackgroundBrush}">
-                                            <Calendar x:Name="PART_Calendar"
+                                            <primitives:Calendar x:Name="PART_Calendar"
                                                       Margin="2 0"
                                                       BorderBrush="Transparent"
                                                       SelectionMode="SingleDate"

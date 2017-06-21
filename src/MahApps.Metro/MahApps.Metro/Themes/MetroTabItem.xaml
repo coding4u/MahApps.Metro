@@ -21,7 +21,7 @@
                             SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
                         <Grid HorizontalAlignment="Stretch"
                               VerticalAlignment="Stretch"
-                              UseLayoutRounding="True">
+                              >
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition x:Name="PART_ContentLeftCol" Width="Auto" />
                                 <ColumnDefinition x:Name="PART_ContentRightCol" Width="Auto" />
@@ -33,7 +33,7 @@
                             <Grid x:Name="PART_ContentSite"
                                   Grid.Row="0"
                                   Grid.Column="0"
-                                  UseLayoutRounding="False">
+                                  >
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="*" />
                                     <ColumnDefinition Width="Auto" />
