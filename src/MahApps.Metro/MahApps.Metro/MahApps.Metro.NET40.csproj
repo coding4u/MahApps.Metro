@@ -80,14 +80,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\..\paket-files\ControlzEx\ControlzEx\src\ControlzEx\BadgedEx.cs">
-      <Paket>True</Paket>
-      <Link>ControlzEx/BadgedEx.cs</Link>
-    </Compile>
-    <Compile Include="..\..\paket-files\ControlzEx\ControlzEx\src\ControlzEx\KeyboardNavigationEx.cs">
-      <Paket>True</Paket>
-      <Link>ControlzEx/KeyboardNavigationEx.cs</Link>
-    </Compile>
+    <Compile Include="ControlzEx\BadgedEx.cs" />
+    <Compile Include="ControlzEx\KeyboardNavigationEx.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
